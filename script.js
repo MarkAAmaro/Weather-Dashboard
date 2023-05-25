@@ -28,4 +28,14 @@ function displayCurrentWeather(data) {
   const humidity = data.list[0].main.humidity;
   const windSpeed = data.list[0].wind.speed;
   const icon = data.list[0].weather[0].icon;
+//updated variable to display api image source
+const currentWeatherElement = document.getElementById('current-weather');
+ currentWeatherElement.innerHTML = `
+   <h2>${city}</h2>
+   <p>Date: ${date}</p>
+   <img src="http://openweathermap.org/img/w/${icon}.png" alt="Weather Icon">
+   <p>Temperature: ${temperature}°C</p>
+   <p>Humidity: ${humidity}%</p>
+   <p>Wind Speed: ${windSpeed} m/s</p> `
+ ;
 }
