@@ -13,6 +13,7 @@ function searchWeather(city) {
     .then(response => response.json())
     .then(data => {
       displayCurrentWeather(data);
+      displayForecast(data);
       addToSearchHistory(city);
     })
     .catch(error => {
@@ -39,6 +40,32 @@ const currentWeatherElement = document.getElementById('current-weather');
  ;
 }
 
+function displayForecast(data) {
+
+  const forecastData = data.list.slice(1, 6);
+  const forecastElement = document.getElementById('forecast');
+ forecastElement.innerHTML = '<h2>5-Day Forecast</h2>';
+
+ forecastData.forEach(forecast => {
+  const date = forecast.dt_txt;
+  const temperature = forecast.main.temp;
+  const humidity = forecast.main.humidity;
+  const windSpeed = forecast.wind.speed;
+  const icon = forecast.weather[0].icon;
+
+  const forecastItem = document.createElement('div');
+   forecastItem.classList.add('forecast-item');
+   forecastItem.innerHTML = `
+     <p>Date: ${date}</p>
+     <img src="http://openweathermap.org/img/w/${icon}.png" alt="Weather Icon">
+     <p>Temperature: ${temperature}°C</p>
+     <p>Humidity: ${humidity}%</p>
+     <p>Wind Speed: ${windSpeed} m/s</p>
+   `;
+
+   forecastElement.appendChild(forecastItem);
+ });
+}
 // search history function
 function addToSearchHistory(city) {
   const historyList = document.getElementById('history-list');
@@ -46,3 +73,4 @@ function addToSearchHistory(city) {
   listItem.textContent = city;
   historyList.appendChild(listItem);
  }
+
