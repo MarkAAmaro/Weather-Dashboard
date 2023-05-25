@@ -13,7 +13,6 @@ function searchWeather(city) {
     .then(response => response.json())
     .then(data => {
       displayCurrentWeather(data);
-      displayForecast(data);
       addToSearchHistory(city);
     })
     .catch(error => {
@@ -39,3 +38,11 @@ const currentWeatherElement = document.getElementById('current-weather');
    <p>Wind Speed: ${windSpeed} m/s</p> `
  ;
 }
+
+// search history function
+function addToSearchHistory(city) {
+  const historyList = document.getElementById('history-list');
+  const listItem = document.createElement('li');
+  listItem.textContent = city;
+  historyList.appendChild(listItem);
+ }
