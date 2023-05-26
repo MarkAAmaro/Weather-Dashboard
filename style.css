@@ -1,30 +1,141 @@
 #title {
-    background-color: #0f1c6f;
-    color: #f8f8f8;
-    font-size: 40px;
-    padding: 40px;
-    margin: 0;
-    text-align: center;
-  }
+  background-color: #0f1c6f;
+  color: #f8f8f8;
+  font-size: 40px;
+  padding: 40px;
+  margin: 0;
+  text-align: center;
+}
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f7f7f7;
+}
 
-  body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f7f7f7;
-  }
-  h1 {
-    font-size: 36px;
-    margin: 0;
-    padding: 0;
-  }
-  
-  h2 {
-    font-size: 24px;
-    margin: 0;
-    padding: 0;
-  }
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
 
-  #search-container {
-    margin-bottom: 20px;
-  }
+h1 {
+  font-size: 36px;
+  margin: 0;
+  padding: 0;
+}
+
+h2 {
+  font-size: 24px;
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+
+#search-container {
+  margin-bottom: 20px;
+}
+
+#search-container input {
+  width: 200px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#search-container button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #337ab7;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+#current-weather {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border: 2px solid black;
+  margin: 0 auto;
+  max-width: 400px;
+  margin-bottom: 20px;
+}
+
+#current-weather h2 {
+  color: #337ab7;
+  margin-bottom: 10px;
+}
+
+#current-weather p {
+  margin-bottom: 5px;
+}
+
+#current-weather img {
+  width: 100px;
+  margin-bottom: 10px;
+}
+
+
+#forecast {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background-color: #337ab7;
+  padding: 20px;
+  border-radius: 5px;
+  color: #fff;
+}
+
+.forecast-item {
+  flex-basis: 19%;
+  margin-bottom: 20px;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  color: #333;
+}
+
+.forecast-item p {
+  margin-bottom: 5px;
+}
+
+.forecast-item img {
+  width: 50px;
+  margin-bottom: 10px;
+}
+
+
+#search-history {
+  margin-top: 20px;
+}
+
+#search-history h2 {
+  margin-bottom: 10px;
+}
+
+#history-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#history-list li {
+  cursor: pointer;
+  margin-bottom: 5px;
+  color: #337ab7;
+}
+
+#history-list li:hover {
+  text-decoration: underline;
+}

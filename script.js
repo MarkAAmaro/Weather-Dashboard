@@ -40,12 +40,13 @@ const currentWeatherElement = document.getElementById('current-weather');
  ;
 }
 
+//display 6 weathers under a 5 day forecast
 function displayForecast(data) {
 
   const forecastData = data.list.slice(1, 6);
   const forecastElement = document.getElementById('forecast');
  forecastElement.innerHTML = '<h2>5-Day Forecast</h2>';
-
+//To show the weather variables dipicted in each day
  forecastData.forEach(forecast => {
   const date = forecast.dt_txt;
   const temperature = forecast.main.temp;
